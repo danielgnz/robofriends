@@ -5,6 +5,9 @@ const CardList = ({robots}) => {
 	// if(robots){
 	// 	return <h1>No match</h1>
 	// }
+	// if(true){
+	// 	throw new Error('Noooooo');
+	// }
 	return (
 		<div>
 			{
