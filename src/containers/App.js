@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
 import { setSearchField, requestRobots } from '../Actions';
 
@@ -9,7 +10,6 @@ import ErrorBoundary from '../components/ErrorBoundary';
 
 import './App.css';
 
-// parameter state comes from index.js provider store state(rootReducers)
 const mapStateToProps = state => {
 	return {
 		searchField: state.searchRobots.searchField,
@@ -18,12 +18,10 @@ const mapStateToProps = state => {
 	}
 }
 
-// dispatch the DOM changes to call an action. note mapStateToProps returns object, mapDispatchToProps returns function
-// the function returns an object then uses connect to change the data from reducers
 const mapDispatchToProps = dispatch => {
 	return {
 		onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
-		onRequestRobots: () => dispatch(requestRobots()) // this is the same as requestRobots(dispatch)
+		onRequestRobots: () => dispatch(requestRobots())
 	}
 }
 
@@ -41,10 +39,12 @@ class App extends Component {
 			 <div id="main" className="tc">
 				<SearchBox searchChange={onSearchChange}/>
 				<Scroll>
-				{ isPending ? <h1 className="tc f1 sega t-shadow">Loading...</h1> :
-					<ErrorBoundary>
+				{ 
+					isPending
+				 	? <h1 className="tc f1 sega t-shadow">Loading...</h1>
+				 	: <ErrorBoundary>
 						<CardList robots={filteredRobots}/>
-					</ErrorBoundary>
+					  </ErrorBoundary>
 				}
 				</Scroll>
 			</div>
