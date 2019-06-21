@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expected to render Scroll component 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid black",
+      "height": "500px",
+      "overflowY": "scroll",
+    }
+  }
+/>
+`;

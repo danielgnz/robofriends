@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`expected to render Header component 1`] = `
+<header>
+  <h1
+    class="tc f1 sega t-shadow"
+  >
+    RoboFriends
+  </h1>
+  <CounterButton
+    color="green"
+  />
+</header>
+`;
